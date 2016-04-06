@@ -31,7 +31,7 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface{
                     $table = new AlbumTable($tableGateway);
                     return $table;
                 }, 'AlbumTableGateway' => function($sm){
-                    $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                    $dbAdapter = $sm->get('album');
                     $resultSetPrototype = new ResultSet();
                     $resultSetPrototype->setArrayObjectPrototype(new Album());
                     return new TableGateway('album', $dbAdapter, null,

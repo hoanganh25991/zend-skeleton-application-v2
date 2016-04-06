@@ -1,13 +1,17 @@
 <?php
 return array(
     'db' => array(
-        'driver'         => 'Pdo',
-        'username'       => 'root',  //edit this
-        'password'       => 'ifrc',  //edit this
-        'dsn'            => 'mysql:dbname=zf2tutorial;host=localhost',
-        'driver_options' => array(
-            \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
-        )
+        'adapters' => array(
+            'album' => array(
+                'driver'         => 'Pdo',
+                'username'       => 'root',
+                'password'       => 'ifrc',
+                'dsn'            => 'mysql:dbname=zf2tutorial;host=localhost',
+                'driver_options' => array(
+                    \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
+                )
+            ),
+        ),
     ),
     'controllers' => array(
         'invokables' => array(
@@ -35,5 +39,15 @@ return array(
                 ),
             ),
         ),
+    ),
+//    'service_manager' => array(
+//        'invokables' => array(
+//            'Album\Model\AlbumTable' => 'Zend\Db\Adapter\AdapterServiceFactory'
+//        ),
+//    ),
+    'service_manager' => array(
+        'abstract_factories' => array(
+            'Zend\Db\Adapter\AdapterAbstractServiceFactory',
+        )
     ),
 );

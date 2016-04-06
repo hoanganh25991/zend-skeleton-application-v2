@@ -6,9 +6,17 @@ return array(
         ),
     ),
     'db' => array(
-        'driver' => 'Pdo',
-        'dsn' => 'mysql:dbname=zend_skeleton_task_item;hostname=localhost',
-        PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
+        'adapters' => array(
+            'checklist' => array(
+                'driver'         => 'Pdo',
+                'username'       => 'root',
+                'password'       => 'ifrc',
+                'dsn'            => 'mysql:dbname=zend_skeleton_tasklist;host=localhost',
+                'driver_options' => array(
+                    \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
+                )
+            ),
+        ),
     ),
     'controllers' => array(
         'invokables' => array(
@@ -37,11 +45,11 @@ return array(
     'view_manager' => array(
         'template_map' => array(
             'avatar' => __DIR__.'/../view/check-list/avatar.phtml',
-            'layout/checklist/task' => __DIR__.'/../view/check-list/layout.phtml',
+            'layout/checklist' => __DIR__.'/../view/check-list/layout.phtml',
 
         ),
         'template_path_stack' => array(
-            'album' => __DIR__ . '/../view',
+            'check-list' => __DIR__ . '/../view',
         ),
     ),
 );

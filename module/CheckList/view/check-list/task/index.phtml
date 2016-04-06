@@ -1,8 +1,15 @@
 <?php
-//change the layout
+////change the layout
+//$layout = $this->layout();
+//$layout->setTemplate('layout/checklist');
+////add another avatar by code inside view script
+//$anotherAvatar = new \Zend\View\Model\ViewModel(array('avatarURL' => 'https://avatars1.githubusercontent.com/u/16727973?v=3&s=460'));
+//$anotherAvatar->setTemplate('avatar');
+//$layout->footer = $this->render($anotherAvatar);
+//?>
+<?php
+//inject into layout anotherAvatar, at footer
 $layout = $this->layout();
-$layout->setTemplate('layout/checklist/task');
-//add another avatar by code inside view script
 $anotherAvatar = new \Zend\View\Model\ViewModel(array('avatarURL' => 'https://avatars1.githubusercontent.com/u/16727973?v=3&s=460'));
 $anotherAvatar->setTemplate('avatar');
 $layout->footer = $this->render($anotherAvatar);
@@ -12,5 +19,4 @@ $layout->footer = $this->render($anotherAvatar);
 <!--addChild $avatar to $view, ('avatar' => $avatar)-->
 <!--print it OUT ^^-->
 <?php echo $this->avatar; ?>
-
 
