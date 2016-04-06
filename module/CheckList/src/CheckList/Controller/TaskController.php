@@ -9,20 +9,28 @@ class TaskController extends AbstractActionController{
         $variableContainer = array();
         $coder = "<p>author: Anh Le Hoang - <code>^^</code></p>";
         $variableContainer['coder'] = $coder;
-//        return $variableContainer;
+        //fast way to return $variableContainer, without $viewModel
+        //bcs MvcEvent as fallback, bind $viewModel with $variableContainer
+        //        return $variableContainer;
         $view = new ViewModel($variableContainer);
-//        $view->setTemplate('avatar');
+        //        $view->setTemplate('avatar');
+        //avatar for authro
         $avatar = new ViewModel();
+        //using defined template
         $avatar->setTemplate('avatar');
+        //add 'avatar' to $view
         $view->addChild($avatar, 'avatar');
         return $view;
     }
+
     public function addAction(){
         return parent::indexAction();
     }
+
     public function editAction(){
         return parent::indexAction();
     }
+
     public function deleteAction(){
         return parent::indexAction();
     }
