@@ -1,17 +1,13 @@
 <?php
 return array(
     'db' => array(
-        'adapters' => array(
-            'album' => array(
-                'driver'         => 'Pdo',
-                'username'       => 'root',
-                'password'       => 'ifrc',
-                'dsn'            => 'mysql:dbname=zend_skeleton_blog;host=localhost',
-                'driver_options' => array(
-                    \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
-                )
-            ),
-        ),
+        'driver'         => 'Pdo',
+        'username'       => 'root',  //edit this
+        'password'       => 'ifrc',  //edit this
+        'dsn'            => 'mysql:dbname=zend_skeleton_blog;host=localhost',
+        'driver_options' => array(
+            \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
+        )
     ),
     'view_manager' => array(
         'template_path_stack' => array(
@@ -19,10 +15,10 @@ return array(
         )
     ),
     'controllers' => array(
-//        'invokables' => array(
-//            //defines Blog\Controller\List as an alias for the ListController under the namespace Blog\Controller
-//            'BlogList' => 'Blog\Controller\ListController',
-//        )
+        //        'invokables' => array(
+        //            //defines Blog\Controller\List as an alias for the ListController under the namespace Blog\Controller
+        //            'BlogList' => 'Blog\Controller\ListController',
+        //        )
         'factories' => array(
             'Blog\Controller\List' => 'Blog\Factory\ListControllerFactory',
             'BlogTest' => 'Blog\Factory\TestControllerFactory',
@@ -32,9 +28,9 @@ return array(
         ),
     ),
     'service_manager' => array(
-//        'invokables' => array(
-//            'Blog\Service\PostServiceInterface' => 'Blog\Service\PostService'
-//        ),
+        //        'invokables' => array(
+        //            'Blog\Service\PostServiceInterface' => 'Blog\Service\PostService'
+        //        ),
         'factories' => array(
             'Blog\Mapper\PostMapperInterface'   => 'Blog\Factory\ZendDbSqlMapperFactory',
             'Blog\Service\PostServiceInterface' => 'Blog\Factory\PostServiceFactory',

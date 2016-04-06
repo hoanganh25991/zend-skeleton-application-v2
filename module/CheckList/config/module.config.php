@@ -7,7 +7,7 @@ return array(
     ),
     'db' => array(
         'adapters' => array(
-            'checklist' => array(
+            'Checklist' => array(
                 'driver'         => 'Pdo',
                 'username'       => 'root',
                 'password'       => 'ifrc',
@@ -35,7 +35,7 @@ return array(
                         'action' => 'index',
                     ),
                     'constraints' => array(
-                        'action' => '(add|edit|delete)',
+                        'action' => '(add|edit|delete|json)',
                         'id' => '[0-9]+',
                     ),
                 ),
@@ -50,6 +50,9 @@ return array(
         ),
         'template_path_stack' => array(
             'check-list' => __DIR__ . '/../view',
+        ),
+        'strategies' => array(
+            'ViewJsonStrategy',
         ),
     ),
 );
