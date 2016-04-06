@@ -37,6 +37,7 @@ return array(
     'view_manager' => array(
         'template_map' => array(
             'avatar' => __DIR__.'/../view/check-list/avatar.phtml',
+            'layout/checklist/task' => __DIR__.'/../view/check-list/layout.phtml',
 
         ),
         'template_path_stack' => array(

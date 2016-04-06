@@ -15,11 +15,14 @@ class TaskController extends AbstractActionController{
         $view = new ViewModel($variableContainer);
         //        $view->setTemplate('avatar');
         //avatar for authro
-        $avatar = new ViewModel();
+        //        $avatar = new ViewModel();
+        $avatar = new ViewModel(array('avatarURL' => 'https://avatars0.githubusercontent.com/u/8801188?v=3&s=460'));
         //using defined template
         $avatar->setTemplate('avatar');
         //add 'avatar' to $view
         $view->addChild($avatar, 'avatar');
+        //Disable layouts; `MvcEvent` will use this View Model instead
+//                $view->setTerminal(true);
         return $view;
     }
 
