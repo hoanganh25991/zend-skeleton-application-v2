@@ -46,6 +46,7 @@ return array(
         'template_map' => array(
             'avatar' => __DIR__.'/../view/check-list/avatar.phtml',
             'layout/checklist' => __DIR__.'/../view/check-list/layout.phtml',
+            'layout/checklist/add' => __DIR__.'/../view/check-list/addLayout.phtml'
 
         ),
         'template_path_stack' => array(
